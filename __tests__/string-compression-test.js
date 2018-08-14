@@ -5,7 +5,7 @@ describe("compression", () => {
     describe("when the string contains numeric characters", () => {
         it("should remove numbers from the string ", () => {
             const result = compression("1aab3bcc")
-            expect(result).toEqual(a2b2c2)
+            expect(result).toEqual("aabbcc")
         })
     } )
 } )
@@ -20,27 +20,27 @@ describe("compression", () => {
 })
 
 describe("compresion", () => {
-    desribe("when there is a string with spaces", () => {
+    describe("when there is a string with spaces", () => {
         it("should return a compressed string with no spaces", () => {
             const result =  compression("bboc rroods ddlla")
-            expect (result).toEqual(b2o1c1r2o2d1s1d2l2a1)
+            expect (result).toEqual("b2o1c1r2o2d1s1d2l2a1")
         })
     })
 } )
 
 describe("compresion", () => {
-    desribe("when there are punctuation marks in a string", () => {
+    describe("when there are punctuation marks in a string", () => {
         it("should return a compressed string with no punctuation", () => {
             const result =  compression("bboc!rroods?ddlla,")
-            expect (result).toEqual(b2o1c1r2o2d1s1d2l2a1)
+            expect (result).toEqual("b2o1c1r2o2d1s1d2l2a1")
         })
     })
 } )
 describe("compresion", () => {
-    desribe("when there are uppercase characters ", () => {
+    describe("when there are uppercase characters ", () => {
         it("should return a compressed string with no punctuation", () => {
             const result =  compression("bboc!rroods?ddlla,")
-            expect (result).toEqual(b2o1c1r2o2d1s1d2l2a1)
+            expect (result).toEqual("b2o1c1r2o2d1s1d2l2a1")
         })
     })
 } )
