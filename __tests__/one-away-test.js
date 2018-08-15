@@ -30,7 +30,7 @@ describe("oneAway", () => {
 describe("oneAway", () => {
     describe("when the words are more than one edit apart", ()=>{
         it("should return false", ()=>{
-            const result = oneAway("shar", "cassdr")
+            const result = oneAway("pale", "palllll")
             expect(result).toEqual(false)
         })
     })
