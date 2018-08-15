@@ -23,14 +23,14 @@ describe("oneAway", () => {
     describe("when there are more than two strings", ()=>{
         it("should throw an error", ()=>{
             const result = oneAway("oneword","twoword", "threeword")
-            expect(result).toEqual(0)
+            expect(result).toEqual(false)
         })
     })
 })
 describe("oneAway", () => {
     describe("when the words are more than one edit apart", ()=>{
         it("should return false", ()=>{
-            const result = oneAway("car", "shar")
+            const result = oneAway("shar", "cassdr")
             expect(result).toEqual(false)
         })
     })
