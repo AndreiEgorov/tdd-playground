@@ -39,38 +39,55 @@ describe("Process Data", () => {
     processedData = dataProcessor(mockData);
   });
 
-//   describe("Shape of processed data", () => {
-//     it("should generate an object with 3 keys", () => {
-//       expect(Object.keys(processedData)).toEqual([
-//         "projects",
-//         "experience",
-//         "demographics"
-//       ]);
-//     });
-//   });
-
-//   describe("Projects", () => {
-//     it("Should create an object for each project", () => {
-//       expect(Object.keys(processedData.projects)).toEqual([
-//         "project1",
-//         "project2",
-//         "project3",
-//         "project4"
-//       ]);
-//     });
-//     it("Should calculate the average satisfaction for passing students", () => {});
-//     it("Should calculate the average satisfaction for failed students", () => {});
-//   });
-
-  describe("Experience", () => {
-    it("Should return the average satisfaction for all years of experience present in data", () => {
-        console.log("test", {processedData})
-        expect(Object.keys({processedData})).toEqual(3)
-       
+  describe("Shape of processed data", () => {
+    it("should generate an object with 3 keys", () => {
+      expect(Object.keys(processedData)).toEqual([
+        "projects",
+        "experience",
+        "demographics"
+      ]);
     });
   });
 
-//   describe("Demographics", () => {
-//     it("Should return the average age and satisfaction for the cohort", () => {});
-//   });
+  describe("Projects", () => {
+    it("Should create an object for each project", () => {
+      expect(Object.keys(processedData.projects)).toEqual([
+        "project1",
+        "project2",
+        "project3",
+        "project4"
+      ]);
+    });
+    it("Should return how many people passed and calculate  average satisfaction for them", () => {
+        result = processedData.projects.project1
+        expect(result).toEqual({
+            passed: { number: 10, satisfaction: 10 },
+            failed: { number: 10, satisfaction: 10 }
+        })
+    });
+    it("Should return how many people failed and calculate  average satisfaction for them", () => {
+        result = processedData.projects.project1
+        expect(result).toEqual({
+            passed: { number: 10, satisfaction: 10 },
+            failed: { number: 10, satisfaction: 10 }
+        })
+    });
+  });
+
+  describe("Experience", () => { 
+    it("Should return the average satisfaction for all years of experience present in data", () => { 
+        result = Object.keys(processedData.experience)
+        expect(result).toEqual([{satisfaction:3}]) 
+    });
+  });
+
+  describe("Demographics", () => {
+    it("Should return the average age and satisfaction for the cohort", () => {
+        result =  processedData.demographics
+        expect(result).toEqual({
+            averageAge: 10,
+            satisfaction: 10
+          })
+    });
+  });
 });

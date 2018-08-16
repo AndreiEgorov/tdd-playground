@@ -14,7 +14,7 @@ describe("student Stats", () => {
         project1: {
           passed: { number: 10, satisfaction: 10 },
           failed: { number: 10, satisfaction: 10 }
-        }
+      }
       },
       experience: {
         1: { satisfaction: 10 },
