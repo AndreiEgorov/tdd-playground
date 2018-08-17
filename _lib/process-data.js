@@ -17,25 +17,26 @@ module.exports = data => {
     let project = {
       passed: {
         number: peoplePassed.length,
-        satisfaction:satisfactionPassed.reduce((a, b) => a + b) / satisfactionPassed.length
+        satisfaction:parseFloat((satisfactionPassed.reduce((a, b) => a + b) / satisfactionPassed.length).toFixed(2))
       },
       failed: {
         number: peopleFailed.length,
-        satisfaction:satisfactionFailed.reduce((a, b) => a + b) / satisfactionFailed.length
+        satisfaction:parseFloat((satisfactionFailed.reduce((a, b) => a + b) / satisfactionFailed.length).toFixed(2))
       }
     };
     return project;
   };
-
-  const singleExp = (data) => {
-      allStudExperiences = []
-      for(let i = 0; i<data.length; i++){
-          
-      }
-
-
-
-  }
+    
+let expSatisfaction = {}
+for(let i = 0; i<data.length; i++){
+    console.log("Satisfaction 1",expSatisfaction[data[i].yearsExperience])
+    if(expSatisfaction[data[i].yearsExperience]=== undefined){
+        (expSatisfaction[data[i].yearsExperience] = {"satisfaction":parseFloat((data[i].satisfaction).toFixed(2))})
+    }else{
+        expSatisfaction[data[i].yearsExperience] = {"satisfaction":parseFloat(((expSatisfaction[data[i].yearsExperience].satisfaction+data[i].satisfaction)/2).toFixed(2))}
+    }
+ 
+}
 
 
 
@@ -48,7 +49,7 @@ module.exports = data => {
 
   let myObject = {
     projects: projects,
-    experience: {},
+    experience: expSatisfaction,
     demographics: {}
   };
 
