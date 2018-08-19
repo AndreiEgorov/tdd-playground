@@ -46,7 +46,6 @@ describe("Process Data", () => {
 
   beforeEach(() => {
     processedData = dataProcessor(mockData);
-    // console.log("processedDataband", processedData.projects);
   });
 
     describe("Shape of processed data", () => {
@@ -61,7 +60,6 @@ describe("Process Data", () => {
 
     describe("Projects", () => {
       it("Should create an object for each project", () => {
-        // console.log("ProcessedData",processedData.projects)
         expect(Object.keys(processedData.projects)).toEqual([
           "project1",
           "project2",
@@ -90,13 +88,13 @@ describe("Process Data", () => {
     });
   });
 
-  //   describe("Demographics", () => {
-  //     it("Should return the average age and satisfaction for the cohort", () => {
-  //         result =  processedData.demographics
-  //         expect(result).toEqual({
-  //             averageAge: 10,
-  //             satisfaction: 10
-  //           })
-  //     });
-  //   });
+    describe("Demographics", () => {
+      it("Should return the average age and satisfaction for the cohort", () => {
+          result =  processedData.demographics
+          expect(result).toEqual({
+              averageAge: 35,
+              satisfaction: 3
+            })
+      });
+    });
 });
